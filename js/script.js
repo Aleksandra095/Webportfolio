@@ -144,17 +144,11 @@ window.addEventListener("DOMContentLoaded", () => {
     const translations = {
         en: {
             heroText: `I create photorealistic interior and exterior visualizations using 3ds Max, Corona Renderer and Photoshop.
-
 Photorealistic interior visualizations crafted at the intersection of technical precision, design, and the psychology of visual perception.
-
 Turning interior concepts into reality.
-
 Photorealistic 3D interior visualization, crafted through technical mastery, meticulous attention to detail, and the psychology of visual perception (3ds Max, Corona Renderer, Photoshop).
-
 A passion for CGI paired with a background in sales, pedagogy, and psychology. Thanks to this insight, I don’t just build digital models — I deeply understand how the human eye perceives space, how lighting shifts mood, and how textures evoke feelings of coziness or luxury.
-
 Combined with my sales experience, this allows me to use composition to highlight the key strengths of your design, ensuring the client falls in love with the project at first sight.
-
 Photorealistic interior visualization (residential and commercial); quick adaptation to new workflows.`,
 
             aboutTitle: "About Me",
@@ -169,17 +163,11 @@ Photorealistic interior visualization (residential and commercial); quick adapta
 
         uk: {
             heroText: `Я створюю фотореалістичні інтер’єрні та екстер’єрні візуалізації.
-
 Фотореалістичні інтер’єри, створені на перетині технічної точності, дизайну та психології сприйняття.
-
 Перетворюю концепти інтер’єру на реальність.
-
 3D-візуалізація інтер’єрів із глибоким опрацюванням деталей, освітлення та матеріалів (3ds Max, Corona Renderer, Photoshop).
-
 Досвід у CGI поєднаний із продажами, педагогікою та психологією дозволяє мені розуміти, як люди емоційно сприймають простір.
-
 Я не просто будую моделі — я допомагаю клієнту “відчути” майбутній інтер’єр ще до будівництва.
-
 Візуалізації житлових і комерційних просторів; швидка адаптація до нових пайплайнів.`,
 
             aboutTitle: "Про мене",

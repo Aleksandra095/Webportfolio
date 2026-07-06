@@ -10,8 +10,11 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: radial-gradient(circle at top, #2018659e 50%, #0f172a 50%, #081b6d 100%);
-    color: #e5e7eb;
+    background: radial-gradient(circle at top,
+        rgba(32, 24, 101, 0.6) 0%,
+        #0f172a 55%,
+        #081b6d 100%);
+    color: #1d2a46;
     line-height: 1.6;
 }
 
@@ -225,7 +228,7 @@ footer {
 }
 }
 body {
-    background: #fff;
+    background: #254443;
 }
 /* =========================
    PORTFOLIO GRID (CLEAN PREVIEW)

@@ -35,7 +35,7 @@ sections.forEach(sec => {
 
 
 // =========================
-// LIGHTBOX (SAFE)
+// LIGHTBOX WITH ARROWS
 // =========================
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -44,9 +44,15 @@ window.addEventListener("DOMContentLoaded", () => {
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.querySelector(".lightbox-img");
 
+    const closeBtn = document.querySelector(".close");
+    const leftBtn = document.querySelector(".nav.left");
+    const rightBtn = document.querySelector(".nav.right");
+
     if (!lightbox || !lightboxImg || images.length === 0) return;
 
+
     let currentIndex = 0;
+
 
     function openImage(index) {
         currentIndex = index;
@@ -54,20 +60,73 @@ window.addEventListener("DOMContentLoaded", () => {
         lightboxImg.src = images[currentIndex].src;
     }
 
+
+    function showNext() {
+        currentIndex++;
+
+        if (currentIndex >= images.length) {
+            currentIndex = 0;
+        }
+
+        lightboxImg.src = images[currentIndex].src;
+    }
+
+
+    function showPrev() {
+        currentIndex--;
+
+        if (currentIndex < 0) {
+            currentIndex = images.length - 1;
+        }
+
+        lightboxImg.src = images[currentIndex].src;
+    }
+
+
+    // Відкриття фото
     images.forEach((img, index) => {
-        img.addEventListener("click", () => openImage(index));
+        img.addEventListener("click", () => {
+            openImage(index);
+        });
     });
 
+
+    // Стрілки
+    rightBtn.addEventListener("click", showNext);
+    leftBtn.addEventListener("click", showPrev);
+
+
+    // Закриття по Х
+    closeBtn.addEventListener("click", () => {
+        lightbox.style.display = "none";
+    });
+
+
+    // Закриття кліком поза фото
     lightbox.addEventListener("click", (e) => {
         if (e.target === lightbox) {
             lightbox.style.display = "none";
         }
     });
 
+
+    // Клавіатура
     document.addEventListener("keydown", (e) => {
+
+        if (lightbox.style.display !== "flex") return;
+
         if (e.key === "Escape") {
             lightbox.style.display = "none";
         }
+
+        if (e.key === "ArrowRight") {
+            showNext();
+        }
+
+        if (e.key === "ArrowLeft") {
+            showPrev();
+        }
+
     });
 
 });

@@ -228,7 +228,7 @@ footer {
 }
 }
 body {
-    background: #254443;
+    background: #437675f8;
 }
 /* =========================
    PORTFOLIO GRID (CLEAN PREVIEW)
@@ -362,8 +362,8 @@ body::before {
     pointer-events: none;
 }
 .section {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(164, 120, 120, 0.066);
+    border: 1px solid rgba(194, 156, 156, 0.19);
     border-radius: 16px;
     padding: 40px;
     margin: 20px;

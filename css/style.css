@@ -224,6 +224,9 @@ footer {
     gap: 10px;
 }
 }
+body {
+    background: #fff;
+}
 /* =========================
    PORTFOLIO GRID (CLEAN PREVIEW)
 ========================= */
@@ -249,9 +252,9 @@ footer {
     transform: scale(1.05);
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
-/* =========================
+/* ==================
    LIGHTBOX
-========================= */
+===================== */
 
 .lightbox {
     display: none;

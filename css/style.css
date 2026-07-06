@@ -26,7 +26,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 60px;
+    padding: 25px 80px;
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(10px);
     position: sticky;

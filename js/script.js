@@ -74,34 +74,62 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 // =========================
-// LANGUAGE SWITCH (FIXED 100%)
+// LANGUAGE SWITCH (FINAL CLEAN VERSION)
 // =========================
 
 window.addEventListener("DOMContentLoaded", () => {
 
     const langBtn = document.getElementById("langBtn");
-
     if (!langBtn) return;
-
-    let currentLang = "en";
 
     const translations = {
         en: {
-            heroText: "I create photorealistic interior and exterior visualizations using 3ds Max, Corona Renderer and Photoshop.",
+            heroText: `I create photorealistic interior and exterior visualizations using 3ds Max, Corona Renderer and Photoshop.
+
+Photorealistic interior visualizations crafted at the intersection of technical precision, design, and the psychology of visual perception.
+
+Turning interior concepts into reality.
+
+Photorealistic 3D interior visualization, crafted through technical mastery, meticulous attention to detail, and the psychology of visual perception (3ds Max, Corona Renderer, Photoshop).
+
+A passion for CGI paired with a background in sales, pedagogy, and psychology. Thanks to this insight, I don’t just build digital models — I deeply understand how the human eye perceives space, how lighting shifts mood, and how textures evoke feelings of coziness or luxury.
+
+Combined with my sales experience, this allows me to use composition to highlight the key strengths of your design, ensuring the client falls in love with the project at first sight.
+
+Photorealistic interior visualization (residential and commercial); quick adaptation to new workflows.`,
+
             aboutTitle: "About Me",
-            aboutText: "Hi, I’m a 3D Interior Visualizer. My professional journey uniquely combines a passion for CGI with a background in sales, pedagogy, and psychology. This diverse experience is my greatest asset. It allows me to go beyond just technical execution and deeply understand how people interact with space, lighting, and textures on an emotional level. What does this mean for your project? I create clean, high-end, and atmospheric 3D visualizations that accurately capture the designer's intent, helping clients feel their future space long before construction begins. It’s a powerful tool designed to streamline presentations, minimize revisions, and win project approvals. I am driven by perfection in every detail, highly value your time, and always deliver on schedule.",
+            aboutText: "Hi, I’m a 3D Interior Visualizer. My professional journey uniquely combines a passion for CGI with a background in sales, pedagogy, and psychology. This diverse experience allows me to deeply understand how people perceive space, lighting, and textures emotionally. I create clean, high-end visualizations that help clients feel their future space before it is built.",
+
             experienceTitle: "Experience",
             skillsTitle: "Skills",
             portfolioTitle: "Portfolio",
+            educationTitle: "Education",
             contactTitle: "Contact"
         },
-        ua: {
-            heroText: "Я створюю фотореалістичні інтер’єрні та екстер’єрні візуалізації.",
+
+        uk: {
+            heroText: `Я створюю фотореалістичні інтер’єрні та екстер’єрні візуалізації.
+
+Фотореалістичні інтер’єри, створені на перетині технічної точності, дизайну та психології сприйняття.
+
+Перетворюю концепти інтер’єру на реальність.
+
+3D-візуалізація інтер’єрів із глибоким опрацюванням деталей, освітлення та матеріалів (3ds Max, Corona Renderer, Photoshop).
+
+Досвід у CGI поєднаний із продажами, педагогікою та психологією дозволяє мені розуміти, як люди емоційно сприймають простір.
+
+Я не просто будую моделі — я допомагаю клієнту “відчути” майбутній інтер’єр ще до будівництва.
+
+Візуалізації житлових і комерційних просторів; швидка адаптація до нових пайплайнів.`,
+
             aboutTitle: "Про мене",
-            aboutText: "Привіт! Я — художник 3D-візуалізації інтер'єрів. Мій професійний шлях унікально поєднує пристрасть до CGI (комп'ютерної графіки) з досвідом у сферах продажів, педагогіки та психології. Цей різнобічний досвід — моя перевага. Він дозволяє мені виходити за межі суто технічного виконання та глибоко розуміти на емоційному рівні, як люди взаємодіють із простором, світлом і текстурами. Що це означає для вашого проекту? Я створюю чисті, висококласні та атмосферні 3D-візуалізації, які точно передають задум дизайнера, допомагаючи клієнтам «відчути» свій майбутній простір задовго до початку будівництва. Це потужний інструмент, розроблений для того, щоб оптимізувати презентації, мінімізувати кількість правок та успішно затверджувати проекти.Я прагну до досконалості в кожній деталі, високо ціную ваш час і завжди здаю роботу вчасно.",
+            aboutText: "Привіт! Я 3D-візуалізатор інтер’єрів. Мій досвід поєднує CGI, продажі, педагогіку та психологію. Це дозволяє мені створювати не просто картинки, а емоційно точні простори, які допомагають клієнтам відчути майбутній інтер’єр ще до реалізації.",
+
             experienceTitle: "Досвід",
             skillsTitle: "Навички",
             portfolioTitle: "Портфоліо",
+            educationTitle: "Освіта",
             contactTitle: "Контакти"
         }
     };
@@ -114,20 +142,45 @@ window.addEventListener("DOMContentLoaded", () => {
     const portfolioTitle = document.querySelector("#portfolio h2");
     const contactTitle = document.querySelector("#contact h2");
 
+    let currentLang = localStorage.getItem("lang") || "en";
+
     function updateLanguage() {
-        heroText.textContent = translations[currentLang].heroText;
-        aboutTitle.textContent = translations[currentLang].aboutTitle;
-        aboutText.textContent = translations[currentLang].aboutText;
-        experienceTitle.textContent = translations[currentLang].experienceTitle;
-        skillsTitle.textContent = translations[currentLang].skillsTitle;
-        portfolioTitle.textContent = translations[currentLang].portfolioTitle;
-        contactTitle.textContent = translations[currentLang].contactTitle;
+
+        if (heroText) heroText.innerText = translations[currentLang].heroText;
+        if (aboutTitle) aboutTitle.innerText = translations[currentLang].aboutTitle;
+        if (aboutText) aboutText.innerText = translations[currentLang].aboutText;
+        if (experienceTitle) experienceTitle.innerText = translations[currentLang].experienceTitle;
+        if (skillsTitle) skillsTitle.innerText = translations[currentLang].skillsTitle;
+        if (portfolioTitle) portfolioTitle.innerText = translations[currentLang].portfolioTitle;
+        if (contactTitle) contactTitle.innerText = translations[currentLang].contactTitle;
+
+        langBtn.textContent = currentLang === "en" ? "UA" : "EN";
+
+        localStorage.setItem("lang", currentLang);
     }
 
     langBtn.addEventListener("click", () => {
-        currentLang = currentLang === "en" ? "ua" : "en";
-        langBtn.textContent = currentLang === "en" ? "UA" : "EN";
+        currentLang = currentLang === "en" ? "uk" : "en";
         updateLanguage();
     });
 
+    updateLanguage();
+});
+
+// EDUCATION CARDS ANIMATION
+
+const eduCards = document.querySelectorAll(".education-grid .card");
+
+const eduObserver = new IntersectionObserver(entries => {
+    entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+            setTimeout(() => {
+                entry.target.classList.add("show");
+            }, index * 150);
+        }
+    });
+});
+
+eduCards.forEach(card => {
+    eduObserver.observe(card);
 });
